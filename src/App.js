@@ -1,19 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h4>Noble React</h4>
-      </header>
-    </div>
-  );
+class App extends Component {
+  // constructor() {
+  //   super()
+
+  //   let biodata = {
+  //     name: "Hamza",
+  //     age: 18,
+  //     school: "XYZ school",
+  //     married: false,
+  //     favouriteColor: "red",
+  //     favdish: [
+  //       "BBQ",
+  //       "biryani",
+  //       "sabzi",
+  //       "lassi"
+  //     ]
+  //   }
+  //   console.log(biodata.favdish[2])
+  // }
+  constructor() {
+    super()
+    this.state = {
+      title: "Learn react",
+      version: "0.0.1"
+    }
+  }
+  render() {
+
+    return (
+      <div>
+        <p>THis is sentence</p>
+        <h1>{this.state.title}</h1>
+        <p> Version: {this.state.version} </p>
+      </div>
+    )
+  }
 }
 
 export default App;
+// JSX
