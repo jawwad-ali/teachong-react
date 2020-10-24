@@ -1,42 +1,33 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-  // constructor() {
-  //   super()
-
-  //   let biodata = {
-  //     name: "Hamza",
-  //     age: 18,
-  //     school: "XYZ school",
-  //     married: false,
-  //     favouriteColor: "red",
-  //     favdish: [
-  //       "BBQ",
-  //       "biryani",
-  //       "sabzi",
-  //       "lassi"
-  //     ]
-  //   }
-  //   console.log(biodata.favdish[2])
-  // }
   constructor() {
     super()
-    this.state = {
-      title: "Learn react",
-      version: "0.0.1"
-    }
-  }
-  render() {
+    // this.state = {
+    //   title: "Learn react",
+    //   version: "0.0.1"
+    // }
 
+    // function MyFunction () {
+    //   alert("hello")
+    // }
+    // MyFunction()
+  }
+
+
+  render() {
+    const myFun = (num1, num2) => {
+      const add = num1 + num2
+      console.log(add)
+    }
+    myFun()
     return (
       <div>
         <p>THis is sentence</p>
-        <h1>{this.state.title}</h1>
-        <p> Version: {this.state.version} </p>
+        <button onClick={myFun(10 , 2)} >Click here</button>
       </div>
     )
   }
 }
 
 export default App;
-// JSX
