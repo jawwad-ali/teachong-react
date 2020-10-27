@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Footer from './component/Footer';
+import Header from "./component/Header"
 
 class App extends Component {
   constructor() {
@@ -23,8 +25,12 @@ class App extends Component {
     myFun()
     return (
       <div>
+        <Header />
+
         <p>THis is sentence</p>
-        <button onClick={myFun(10 , 2)} >Click here</button>
+        <button onClick={myFun(10, 2)} >Click here</button>
+
+        <Footer />
       </div>
     )
   }
