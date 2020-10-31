@@ -14,7 +14,6 @@ function Content() {
                 <div className="col-lg-6 img-div">
                     <div className="img-render">
                         <img src={logo} alt="website header " />
-
                     </div>
                 </div>
             </div>
