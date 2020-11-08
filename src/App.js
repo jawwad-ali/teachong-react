@@ -1,49 +1,27 @@
-import React, { Component } from 'react';
-// import Header from "./component/Header"
-// import Content from "./component/Content"
-// import Card from "./component/Card"
-// import Footer from './component/Footer';
+import React, { useState } from 'react';
+import "./App.css"
 
-// let arr = ["ali", "asad" , "cricket" , "biryani"]
-// let [myname, friend, fsport] = arr
-// let [myname, , ,  fdish] = arr
+// REST OPERATORS
+// function add(num1, num2, ...num3) {
+//   // var ans = num1 + num2 + num3
+//   console.log(5, 10, 35, 5, 45, 95, 11, 22, 910)
+// }
 
-// SPREAD OPERATOR
-// let basic = ["ali", "19"]
-// let prgrmng = ["html", "css", "js" , "react"]
+export default function App() {
 
-// let merge = [basic, ...prgrmng]
+  const [defaultVal, setVal] = useState(0)
 
-let obj = {
-  username : "Micheal",
-  website : "micheal.com"
+  return (
+    <div>
+      <h3>
+        {defaultVal}
+      </h3>
+      <button onClick={() => setVal(defaultVal + 1)}>
+        Inc
+      </button>
+      <button onClick={() => setVal(defaultVal-1)}>
+        Dec
+      </button>
+    </div>
+  )
 }
-
-let {username , website} = obj
-
-class App extends Component {
-
-
-  render() {
-    return (
-      <div>
-        {/* <Header />
-        <Content />
-        <Card />
-        <Footer /> */}
-        {/* 
-        <h4>{myname}</h4>
-        <h4>{friend}</h4>
-        <h4>{fsport}</h4> */}
-
-        {/* <h4> {myname}</h4>
-        <h4> {fdish}</h4> */}
-        {/* <h4>{merge}</h4> */}
-        {username}
-        {website}
-      </div>
-    )
-  }
-}
-
-export default App;
