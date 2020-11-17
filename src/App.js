@@ -1,45 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function App() {
 
-  const [email, setemail] = useState("")
-  const [pass, setpass] = useState("")
-  const [gender , setgender] = useState()
+  // const age = 20.9
+  // console.log(Math.floor(age))
+  // console.log(Math.ceil(age))
 
-  const handleSubmit = () => {
-    alert(email)
-    alert(pass)
-    alert(gender)
+  // const subj = ["urdu", "eng", "math", "isl"]
 
-    setemail("")
-    setpass("")
-    setgender()
+  // const random = Math.random() * 2
+  // console.log(random)
+
+  let toss = Math.random() * 2
+  let xyz = Math.ceil(toss)
+  console.log(xyz)
+
+  if(xyz === 1){
+    console.log("hamza won")
+  }
+  else{
+    console.log("asfar won")
   }
 
+  // if (toss === 0)
+  //   return console.log("hamza won")
+
+  // else {
+  //   return console.log("asfar won")
+  // }
   return (
-    <div className="container mt-5" >
-      <div className="text-center mt-2">
-        <h1>HANDLING FORMS WITH REACT</h1>
-      </div>
+    <div  >
+      hello <br />
+      {/* <ol>
+        {
+         subj.map((sub)=>{
+           return(
+           <li key={Math.random()}>{sub}</li>
+           )
+         }) 
+        }
+      </ol> */}
 
-      <div className="row">
-        <div className="col-lg-6 offset-lg-3">
-          <form onSubmit={handleSubmit}>
-            <input type="email" placeholder="Email" className="form-control mb-2" onChange={e => setemail(e.target.value)} />
-            <input type="password" className="form-control mb-2" placeholder="Password" onChange={e => setpass(e.target.value)} />
-            
-
-            <select onChange={e => setgender(e.target.value)}>
-              <option>Male</option>
-              <option>Female</option>
-            </select>
-            <br /> <br />
-
-            <input type="submit" value="Login" className="btn btn-success" />
-          </form>
-        </div>
-      </div>
-
+      {/* {
+        toss === 2 ? "hamza won" : "asfar won"
+      } */}
     </div>
   )
 }
