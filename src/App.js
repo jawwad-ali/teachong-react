@@ -1,49 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function App() {
 
-  // const age = 20.9
-  // console.log(Math.floor(age))
-  // console.log(Math.ceil(age))
+  const name = "Ali"
+  const adj = " tall"
 
-  // const subj = ["urdu", "eng", "math", "isl"]
+  const [theme, setTheme] = useState("red")
+  const [font, setfont] = useState("14px")
 
-  // const random = Math.random() * 2
-  // console.log(random)
-
-  let toss = Math.random() * 2
-  let xyz = Math.ceil(toss)
-  console.log(xyz)
-
-  if(xyz === 1){
-    console.log("hamza won")
-  }
-  else{
-    console.log("asfar won")
+  const OnClickHandler = () => {
+    setTheme(theme === "red" ? "blue" : "red")
+    setfont(font === "14px" ? "50px" : "14px")
   }
 
-  // if (toss === 0)
-  //   return console.log("hamza won")
 
-  // else {
-  //   return console.log("asfar won")
-  // }
   return (
     <div  >
-      hello <br />
-      {/* <ol>
-        {
-         subj.map((sub)=>{
-           return(
-           <li key={Math.random()}>{sub}</li>
-           )
-         }) 
-        }
-      </ol> */}
+      <h1>STRING LITERALS</h1>
 
-      {/* {
-        toss === 2 ? "hamza won" : "asfar won"
-      } */}
+      {
+        `
+          His is ${name} and he is very ${adj}
+        `
+      }
+
+      <div>
+        <Text theme={theme} font={font} />
+        <button onClick={OnClickHandler}> Change Theme </button>
+      </div>
+
     </div>
   )
+}
+
+function Text({ theme, font }) {
+  return (
+    <h1 style={{ color: `${theme}`, fontSize: `${font}` }}> {theme} </h1>
+  );
 }
