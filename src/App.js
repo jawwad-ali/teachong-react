@@ -1,40 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function App() {
 
-  const name = "Ali"
-  const adj = " tall"
+  const [loading, setLoading] = useState(false)
 
-  const [theme, setTheme] = useState("red")
-  const [font, setfont] = useState("14px")
+  useEffect(() => {
+    async function ApiCall() {
+      setLoading(true)
 
-  const OnClickHandler = () => {
-    setTheme(theme === "red" ? "blue" : "red")
-    setfont(font === "14px" ? "50px" : "14px")
-  }
+      const api = await fetch("https://jsonplaceholder.typicode.com/todos/1")
 
+      const response = await api.json()
+
+      console.log(response)
+      setLoading(false)
+
+    }
+    ApiCall()
+  } , [] )
+
+
+
+  if (loading)
+    return <h4>Loading.....</h4>
 
   return (
-    <div  >
-      <h1>STRING LITERALS</h1>
-
-      {
-        `
-          His is ${name} and he is very ${adj}
-        `
-      }
-
-      <div>
-        <Text theme={theme} font={font} />
-        <button onClick={OnClickHandler}> Change Theme </button>
-      </div>
-
+    <div>
+      <h4>Promises</h4>
     </div>
   )
-}
-
-function Text({ theme, font }) {
-  return (
-    <h1 style={{ color: `${theme}`, fontSize: `${font}` }}> {theme} </h1>
-  );
 }
