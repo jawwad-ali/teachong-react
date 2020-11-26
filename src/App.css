@@ -1,3 +1,13 @@
-div{
-  text-align:center;
+.data-container {
+  width: 100%;
+}
+.data{
+  margin:20px;
+  border:1px solid silver;
+  box-shadow: 2px 3px gray;
+  padding:20px;
+  width: 20%;
+  display: inline-block;
+  margin:10px 32px;
+
 }
