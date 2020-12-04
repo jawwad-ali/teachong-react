@@ -4,40 +4,47 @@ import "./App.css"
 export default function App() {
 
   const [loading, setLoading] = useState(false)
-  const [data, setData] = useState([])
+  const [name, setName] = useState([])
+  const [email, setEmail] = useState([])
+  const [street, setStreet] = useState([])
+
 
   useEffect(() => {
+
     async function ApiCall() {
+
       setLoading(true)
 
-      const api = await fetch("https://jsonplaceholder.typicode.com/users")
+      const api = await fetch("https://jsonplaceholder.typicode.com/users/1")
+      const { name, email, address: { street } } = await api.json()
+      console.log(name)
+      console.log(email)
+      console.log(street)
 
-      const response = await api.json()
+      setName(name)
+      setEmail(email)
+      setStreet(street)
+      // setData(email)
 
-      console.log(response)
-      setData(response)
+      // const { address } = await api.json()
+
+      // console.log(address)
+      // setData(address)
+
       setLoading(false)
 
     }
     ApiCall()
   }, [])
 
-
-
   if (loading)
     return <h4>Loading.....</h4>
 
   return (
     <div className="data-container">
-      {
-        data.map((collect) => (
-          <div className="data">
-            <span><strong>Name</strong></span><p>{collect.name}</p>
-            <span><strong>Phone</strong></span><p>{collect.phone}</p>
-            <span><strong>Username</strong></span><p>{collect.username}</p>
-          </div>
-        ))
-      }
+      {name} <br />
+      {email} <br />
+      {street}  <br />
     </div>
 
   )
