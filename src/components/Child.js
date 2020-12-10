@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import GrandChild from "./GrandChild"
+import { MyContext } from "../AppContext"
 
-function Child({ id, image, name, price, button }) {
+
+function Child() {
+
+    let Dec_Context = useContext(MyContext)
+
+    let [dec, setDec] = useState(Dec_Context)
+
     return (
         <div>
-            <h1>Child Component</h1>
-            {/* <p>My name is {props.name}</p>
-            <p>My age is {props.age}</p>
+            <button onClick={() => setDec(--dec)}>
+                Decrement
+            </button>
 
-        <GrandChild gender={props.gender} /> */}
+            <h6>State from  Dec Comp</h6>
+            {dec}
 
-            <h4>{name}</h4>
-            <img src={image} />
-            <p>Price: <em>Rs{price}</em> </p>
-            <button>{button}</button>
         </div>
-     )
+    )
 }
-    
+
 export default Child
